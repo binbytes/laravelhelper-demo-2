@@ -19,8 +19,12 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'password' => bcrypt('secret'), // secret
+        'remember_token' => str_random(10),
+        'mobile_no' => $faker->phoneNumber,
+        'address' => $faker->address,
+        'joining_date' => $faker->dateTimeBetween('-2 years', '-1 years')->format('Y-m-d'),
+        'dob' => $faker->dateTimeBetween('-30 years', '-15 years')->format('Y-m-d'), // :D
+        'base_salary' => $faker->randomNumber(5),
     ];
 });
