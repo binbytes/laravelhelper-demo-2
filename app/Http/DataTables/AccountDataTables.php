@@ -15,6 +15,11 @@ class AccountDataTables extends BaseDatatableScope
     {
         $this->setHtml([
             [
+                'data' => 'user_id',
+                'name' => 'user_id',
+                'title' => 'User Id'
+            ],
+            [
                 'data' => 'name',
                 'name' => 'name',
                 'title' => 'Name'
