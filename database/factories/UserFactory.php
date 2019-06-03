@@ -44,7 +44,7 @@ $factory->define(\App\Project::class, function (Faker $faker) {
         'client_id' => function() {
             return factory('App\Client')->create()->id;
         },
-        'title' => $faker->lastName,
+        'title' => $faker->word,
         'started_at' => $faker->date()
     ];
 });
@@ -55,7 +55,7 @@ $factory->define(\App\Account::class, function (Faker $faker) {
             return factory('App\User')->create()->id;
         },
         'name' => $faker->name,
-        'bank_name' => $faker->title,
+        'bank_name' => $faker->word,
         'account_number' => $faker->bankAccountNumber,
         'name_on_account' => $faker->name,
         'branch_of' => $faker->city,
@@ -65,7 +65,7 @@ $factory->define(\App\Account::class, function (Faker $faker) {
 
 $factory->define(\App\Department::class, function (Faker $faker) {
     return [
-        'title' => $faker->title,
+        'title' => $faker->word,
         'remarks' => $faker->text
     ];
 });

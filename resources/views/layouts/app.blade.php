@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/vendor.css') }}" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -50,11 +51,19 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
     <script type="text/javascript">
         $(function() {
             $('.datepicker').datepicker({
                 format: 'yyyy/mm/dd',
+            });
+            $('#summernote').summernote({
+                height: 150,
+                placeholder: 'write here...',
+                toolbar:[
+                    ['style', ['bold', 'italic', 'underline', 'clear']], 'font', 'fontname', 'fontsize', 'color',
+                    ['para', ['ul', 'ol', 'paragraph']], 'height', 'help'
+                ],
             });
         });
     </script>
